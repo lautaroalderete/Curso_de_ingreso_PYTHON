@@ -37,7 +37,7 @@ class App(customtkinter.CTk):
         edad = int(edad_text)
         if(edad == 18):
             alert("Utn", "Usted tiene 18 años")
-         
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
