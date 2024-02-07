@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Lautaro
+apellido: Alderete
 ---
 TP: ES_Facturaciones
 ---
@@ -52,13 +52,39 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
-
+        producto_uno = self.txt_importe_1.get()
+        producto_dos = self.txt_importe_2.get()
+        producto_tres = self.txt_importe_3.get()
+        precio_uno = float(producto_uno)
+        precio_dos = float(producto_dos)
+        precio_tres = float(producto_tres)
+        operación =  precio_uno + precio_dos + precio_tres
+        mensaje = "La suma de los productos es de ${0}".format(operación)
+        alert("Utn", mensaje)
     def btn_promedio_on_click(self):
-        pass
+        producto_uno = self.txt_importe_1.get()
+        producto_dos = self.txt_importe_2.get()
+        producto_tres = self.txt_importe_3.get()
+        precio_uno = float(producto_uno)
+        precio_dos = float(producto_dos)
+        precio_tres = float(producto_tres)
+        suma =  precio_uno + precio_dos + precio_tres
+        promedio = suma / 3
+        mensaje = "El promedio de los productos es de ${0}".format(promedio)
+        alert("Utn", mensaje)
 
     def btn_total_iva_on_click(self):
-        pass      
+        producto_uno = self.txt_importe_1.get()
+        producto_dos = self.txt_importe_2.get()
+        producto_tres = self.txt_importe_3.get()
+        precio_uno = float(producto_uno)
+        precio_dos = float(producto_dos)
+        precio_tres = float(producto_tres)
+        precio_sin_iva =  precio_uno + precio_dos + precio_tres
+        iva = precio_sin_iva * (21 / 100)
+        precio_con_iva = precio_sin_iva + iva
+        mensaje = "El precio de los productos final con iva es de ${0}".format(precio_con_iva)
+        alert("Utn", mensaje)
     
 if __name__ == "__main__":
     app = App()
