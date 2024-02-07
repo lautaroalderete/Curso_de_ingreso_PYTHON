@@ -45,7 +45,6 @@ class App(customtkinter.CTk):
         edad_float = float(edad)
         mensaje = "Usted se llama {0} y su edad es {1}".format(nombre,edad)
         alert("Utn",mensaje )
-
         
     
 if __name__ == "__main__":
