@@ -74,6 +74,7 @@ class App(customtkinter.CTk):
             precio_con_descuento = precio_con_descuento - precio_con_descuento * (5 / 100)
         mensaje = "El precio con el descuento es de {0}".format(precio_con_descuento)
         alert("Lamparas", mensaje)
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
