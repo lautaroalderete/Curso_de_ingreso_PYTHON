@@ -37,7 +37,6 @@ class App(customtkinter.CTk):
         altura = float(altura_text)
         if(altura > 1.80):
             alert("Utn", "Pivot")
-    #duda
 
 if __name__ == "__main__":
     app = App()
