@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
         pedir_numero = prompt("Numero", "Ingrese un número")
         numero = int(pedir_numero)
         while(numero >0 and numero <9):
-            pedir_numero
+            pedir_numerocxefref
     
 if __name__ == "__main__":
     app = App()
