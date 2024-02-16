@@ -45,9 +45,7 @@ class App(customtkinter.CTk):
         nacionalidad = self.combobox_tipo.get()
         edad_str = self.txt_edad.get()
         edad = int(edad_str)
-        if(nacionalidad == "NATIVO" and edad >= 16):
-            alert("Utn", "Usted puede votar")
-        elif(nacionalidad == "NATURALIZADO" and edad >= 18):
+        if(nacionalidad == "NATIVO" and edad >= 16) or (nacionalidad == "NATURALIZADO" and edad >= 18):
             alert("Utn", "Usted puede votar")
         else:
             alert("Utn", "Usted no puede votar")

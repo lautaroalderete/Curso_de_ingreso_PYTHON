@@ -46,7 +46,6 @@ class App(customtkinter.CTk):
         if(estado_civil == "Soltero" and edad >= 18):
             alert("Utn", "Es soltero y no es menor")
         
-        
     
 if __name__ == "__main__":
     app = App()
