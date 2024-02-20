@@ -7,8 +7,8 @@ import customtkinter
 
 '''
 
-nombre: Lautaro
-apellido: Alderete
+nombre: Lautaro Lautaro
+apellido: Alderete Alderete
 ---
 Ejercicio: Match_01
 ---

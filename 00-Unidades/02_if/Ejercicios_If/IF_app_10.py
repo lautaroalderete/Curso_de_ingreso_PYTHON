@@ -7,8 +7,8 @@ import random
 
 
 '''
-nombre: Lautaro
-apellido: Alderete
+nombre: Lautaro Lautaro
+apellido: Alderete Alderete
 ---
 Ejercicio: if_10
 ---

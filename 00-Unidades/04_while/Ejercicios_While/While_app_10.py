@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Lautaro
+apellido: Alderete
 ---
 Ejercicio: while_10
 ---
@@ -20,6 +20,8 @@ Luego calcular:
     D. Cantidad de números negativos ingresados
     E. Cantidad de ceros
     F. Diferencia entre la cantidad de los números positivos ingresados y los negativos
+    G. El maximo valor ingresado
+    H. El minimo valor ingresado (incluyendo en que iteración se encontro, solo la primera)
 
 Informar los resultados mediante alert()
 
@@ -43,22 +45,32 @@ class App(customtkinter.CTk):
         contador_positivos = 0
         contador_negativos = 0
         contador_ceros = 0
+        bandera_primer_ingreso = False
+        maximo = 0
+        minimo = 0
+        contador_minimo = 0
         while True:
             numeros = prompt("Utn", "Ingrese un numero")
+            contador_iteraciones += 1
             if numeros == None:
                 break
             numeros = int(numeros)
+            if numeros > maximo or bandera_primer_ingreso == False:
+                maximo = numeros
+            if numeros < minimo or bandera_primer_ingreso == False:
+                minimo = numeros
+                bandera_primer_ingreso = True
+                contador_minimo = contador_iteraciones
             if numeros > 0:
                 suma_acumulada_positivos += numeros
                 contador_positivos += 1
-            if numeros < 0:
+            elif numeros < 0:
                 suma_acumulada_negativos += numeros
                 contador_negativos += 1
-            if numeros == 0:
+            else:
                 contador_ceros += 1
             suma_acumulada_total = suma_acumulada_negativos + suma_acumulada_positivos
-            contador_iteraciones += 1
-        mensaje = "La suma acumulada de los positivos es: {0} \n La suma acumulada de los negativos es: {1} \n La cantidad de números positivos ingresados es: {2} \n La cantidad de números negativos ingresados es: {3} \n La cantidad de veces que se ingresó el cero fue: {4} \n La suma acumulada total es: {5}".format(suma_acumulada_positivos,suma_acumulada_negativos,contador_positivos,contador_negativos,contador_ceros,suma_acumulada_total)
+        mensaje = "La suma acumulada de los positivos es: {0} \n La suma acumulada de los negativos es: {1} \n La cantidad de números positivos ingresados es: {2} \n La cantidad de números negativos ingresados es: {3} \n La cantidad de veces que se ingresó el cero fue: {4} \n La suma acumulada total es: {5} \n El valor maximo es: {6} \n El valor minimo es {7} en la iteración {8}".format(suma_acumulada_positivos,suma_acumulada_negativos,contador_positivos,contador_negativos,contador_ceros,suma_acumulada_total,maximo,minimo,contador_minimo)
         alert("Utn", mensaje)
     
 if __name__ == "__main__":

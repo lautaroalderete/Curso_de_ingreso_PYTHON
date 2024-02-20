@@ -6,8 +6,8 @@ import customtkinter
 import math
 
 '''
-nombre: Lautaro
-apellido: Alderete
+nombre: Lautaro Lautaro
+apellido: Alderete Alderete
 ---
 TP: ES_Camioneros
 ---
