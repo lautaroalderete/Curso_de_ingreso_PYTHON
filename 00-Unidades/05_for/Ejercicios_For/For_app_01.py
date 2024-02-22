@@ -28,9 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass 
-       
-            
+        for i in range(0, 5):
+            print(i+1)
 
 if __name__ == "__main__":
     app = App()

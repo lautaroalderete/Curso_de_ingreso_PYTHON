@@ -54,12 +54,32 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        while True:
-            apellido = prompt("Apellido", "Ingrese su apellido")
-            edad = prompt("Edad", "Ingrese su edad")
+        seguir = True
+        while seguir == True:
+            apellido = input("Ingrese su apellido: ")
+            edad = input("Ingrese su edad: ")
             edad = int(edad)
-            if edad <18 and edad >= 90:
-                edad = prompt("Edad", "Ingrese su edad")
+            while edad < 18 or edad >90:
+                edad = input("Reingrese su edad: ")
+                edad = int(edad)
+            estado_civil = input("Ingrese su estado civil (Soltero/a, Casado/a, Divorciado/a, Viudo/a): ")
+            while estado_civil != "Soltero/a" and estado_civil != "Casado/a" and estado_civil != "Divorciado/a" and estado_civil != "Viudo/a":
+                estado_civil = input("Reingrese su estado civil (Soltero/a, Casado/a, Divorciado/a, Viudo/a): ")
+            numero_legajo = input("Ingrese un numero de legajo (4 cifras mayor a 999 y menor a 10000): ")
+            numero_legajo = int(numero_legajo)
+            while numero_legajo < 1000 or numero_legajo > 9999:
+                numero_legajo = input("Reingrese un numero de legajo (4 cifras mayor a 999 y menor a 10000): ")
+                numero_legajo = int(numero_legajo)
+            seguir = False
+        self.txt_apellido.delete(0, "end")
+        self.txt_apellido.insert(0, apellido)
+        self.txt_edad.delete(0, "end")
+        self.txt_edad.insert(0, edad)
+        self.txt_tipo.delete(0, "end")
+        self.txt_tipo.insert(0, estado_civil)
+        self.txt_legajo.delete(0, "end")
+        self.txt_legajo.insert(0, numero_legajo)
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

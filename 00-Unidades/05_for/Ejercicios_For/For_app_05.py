@@ -27,10 +27,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-            
-        
-    
+        numero = input("Ingrese un numero: ")
+        numero = int(numero)
+        contador_pares = 0
+        for i in range(1, numero+1):
+            if i % 2 == 0:
+                print(i)
+                contador_pares += 1
+        print(f"La cantidad de numeros pares fue {contador_pares}")
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
